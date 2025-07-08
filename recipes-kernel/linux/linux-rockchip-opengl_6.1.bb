@@ -2,13 +2,13 @@
 # Released under the MIT license (see COPYING.MIT for the terms)
 
 require recipes-kernel/linux/linux-yocto.inc
-require linux-rockchip.inc
+require recipes-kernel/linux/linux-rockchip.inc
 
 inherit local-git
 
 SRCREV = "a10570bf276c8cb6a6a9c5a11d964d2843376ddd"
 SRC_URI = " \
-	git:///workdir/ddk/2025-project/yocto-5.0.7/source/kernel-linux-6.1-stan-rkr4.1;protocol=file;nobranch=1;branch=master; \
+	git://git@gitlab.ucas.com.cn:22222/wanghuo-scarthgap/linux-rockchip-6.1-panthor.git;protocol=ssh;nobranch=1;branch=master; \
 	file://${THISDIR}/files/cgroups.cfg \
 "
 
