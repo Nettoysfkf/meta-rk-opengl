@@ -49,5 +49,6 @@ IMAGE_INSTALL:append = " \
     common-interfaces fastrtps-cmake-module rosidl-default-generators rosidl-generator-c rosidl-generator-cpp rosidl-cmake \
     ros-environment ros-workspace pluginlib \
     linux-firmware \
+    htop pciutils mesa-demos htop \
 "
 
