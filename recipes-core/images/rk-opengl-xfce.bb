@@ -50,5 +50,6 @@ IMAGE_INSTALL:append = " \
     ros-environment ros-workspace pluginlib \
     linux-firmware \
     htop pciutils mesa-demos htop \
+    chromium-x11 \
 "
 

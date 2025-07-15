@@ -8,7 +8,7 @@ inherit local-git
 
 SRCREV = "a10570bf276c8cb6a6a9c5a11d964d2843376ddd"
 SRC_URI = " \
-	git://git@gitlab.ucas.com.cn:22222/wanghuo-scarthgap/linux-rockchip-6.1-panthor.git;protocol=ssh;nobranch=1;branch=master; \
+        git://git@github.com:Nettoysfkf/rk-6.1-with-panthor.git;protocol=ssh;nobranch=1;branch=linux-6.1-stan-rkr4.1; \
 	file://${THISDIR}/files/cgroups.cfg \
 "
 
