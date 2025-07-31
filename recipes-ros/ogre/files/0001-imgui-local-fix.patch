@@ -1,0 +1,39 @@
+From 4c620fd2f55af2aae42b791f61fb9f255bd70f47 Mon Sep 17 00:00:00 2001
+From: dudengke <dengke.du@ucas.com.cn>
+Date: Thu, 31 Jul 2025 15:35:07 +0800
+Subject: [PATCH] imgui: local fix
+
+file download always failed, change it to local.
+---
+ Components/Overlay/CMakeLists.txt | 10 +---------
+ 1 file changed, 1 insertion(+), 9 deletions(-)
+
+diff --git a/Components/Overlay/CMakeLists.txt b/Components/Overlay/CMakeLists.txt
+index 64a2a4ed74..32ef669c6f 100644
+--- a/Components/Overlay/CMakeLists.txt
++++ b/Components/Overlay/CMakeLists.txt
+@@ -20,14 +20,6 @@ file(GLOB SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
+ 
+ if(OGRE_BUILD_COMPONENT_OVERLAY_IMGUI)
+   set(IMGUI_DIR "${PROJECT_BINARY_DIR}/imgui-1.79" CACHE PATH "")
+-  if(NOT EXISTS ${IMGUI_DIR})
+-    message(STATUS "Downloading imgui")
+-    file(DOWNLOAD
+-        https://github.com/ocornut/imgui/archive/v1.79.tar.gz
+-        ${PROJECT_BINARY_DIR}/imgui.tar.gz)
+-    execute_process(COMMAND ${CMAKE_COMMAND}
+-        -E tar xf imgui.tar.gz WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
+-  endif()
+   list(APPEND SOURCE_FILES
+     ${IMGUI_DIR}/imgui.cpp
+     ${IMGUI_DIR}/imgui_draw.cpp
+@@ -84,4 +76,4 @@ install(FILES ${HEADER_FILES}
+ )
+ install(FILES "${PROJECT_SOURCE_DIR}/Media/packs/profiler.zip"
+   DESTINATION "${OGRE_MEDIA_PATH}/packs/"
+-)
+\ No newline at end of file
++)
+-- 
+2.25.1
+
