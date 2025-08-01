@@ -1,0 +1,5 @@
+# long-description: Creates a GPT disk image for Rockchip boards
+bootloader --ptable gpt
+part --source rawcopy --sourceparams="file=uboot.img" --part-name uboot --align 8192
+part /boot --source rawcopy --sourceparams="file=boot.img" --fstype=vfat --part-name boot --align 8192
+part / --source rootfs --fstype ext4 --part-name rootfs --align 8192
