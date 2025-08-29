@@ -1,3 +1,4 @@
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 DESCRIPTION = "A XFCE desktop image with opengl, glx, ros and panthor support on rk3588."
 
 IMAGE_INSTALL = "packagegroup-core-boot \
@@ -32,7 +33,9 @@ IMAGE_INSTALL:append = " \
     packagegroup-core-full-cmdline rockchip-librga  \
     packagegroup-core-buildessential xserver-xorg-extension-glx \
     packagegroup-core-ssh-openssh \
-    moveit navigation2 ros2cli packagegroup-ros2-demos urdf urdf-parser-plugin \
+    ros-core packagegroup-ros-turtlebot3-core \
+    ogre \
+    moveit navigation2 nav2-bringup ros2cli packagegroup-ros2-demos urdf urdf-parser-plugin \
     packagegroup-fonts-truetype \
     fontconfig ttf-dejavu-common ttf-dejavu-mathtexgyre ttf-dejavu-sans \
     ttf-dejavu-sans-condensed ttf-dejavu-sans-mono ttf-dejavu-serif ttf-dejavu-serif-condensed \
@@ -50,6 +53,18 @@ IMAGE_INSTALL:append = " \
     ros-environment ros-workspace pluginlib \
     linux-firmware \
     htop pciutils mesa-demos htop \
-    chromium-x11 \
+    gazebo11 \
+    turtlesim \
+    nav2-bringup \
+    ceres-solver-dev ceres-solver-staticdev \
+    xfce4-screenshooter \
+    turtlebot3-description turtlebot3-node turtlebot3-bringup turtlebot3-navigation2 turtlebot3-cartographer turtlebot3-example turtlebot3-teleop \
+    turtlebot3 turtlebot3-gazebo turtlebot3-simulations turtlebot3-manipulation-gazebo turtlebot3-fake-node turtlebot3-autorace-camera \
+    turtlebot3-autorace turtlebot3-autorace-mission turtlebot3-autorace-detect turtlebot3-manipulation-moveit-config turtlebot3-manipulation-teleop \
+    turtlebot3-manipulation turtlebot3-manipulation-navigation2 turtlebot3-manipulation-cartographer turtlebot3-manipulation-bringup turtlebot3-manipulation-hardware \
+    turtlebot3-manipulation-description turtlebot3-applications-msgs turtlebot3-msgs \
+    v4l-utils v4l-utils-dev libv4l libv4l-dev \
+    simplescreenrecorder \
+    x11vnc \
 "
-
+# chromium-x11
